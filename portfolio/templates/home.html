@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="home" class="page active">
+    <div class="container hero">
+      <div class="grid-2">
+        <div>
+          <span class="pill">Job Platform • Professional Profiles • Map-based Search</span>
+          <h1>Bridging the Gap Between Talent and Opportunity.</h1>
+          <p class="lead">Our team was tasked to design and build a web application that bridges this gap. The platform serves as a meeting point between young professionals searching for opportunities and recruiters looking for talent. It supports creating and managing professional profiles, posting and exploring job opportunities, and enabling recruiters to search, track, and engage with applicants.</p>
+
+          <div class="kpis" style="margin:10px 0 14px">
+            <div class="kpi">6 teammates</div>
+            <div class="kpi">12+ screens</div>
+            <div class="kpi">Scrum sprints</div>
+            <div class="kpi">Map integration</div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap">
+            <a class="btn" href="{% url 'team' %}">Meet the Team</a>
+            <a class="btn secondary" href="{% url 'system' %}">See the System</a>
+          </div>
+        </div>
+        <div><div class="mock" aria-label="project preview"></div></div>
+      </div>
+
+      <div class="card" style="margin-top:18px">
+        <h2>Project Context</h2>
+        <p>Early-career job seekers often face challenges finding roles that match their skills, interests, and location preferences. At the same time, recruiters struggle to identify and evaluate applicants who are a good fit for their openings, especially when managing large pools of candidates. Because location plays a key role in employment, the platform also integrates map-based features to help job seekers visualize opportunities geographically and recruiters understand applicant distribution. This project was intended to challenge the team to think about multiple perspectives (considering Job seekers, Recruiters, and Administrators) while practicing core software engineering skills such as requirements analysis, system design, team collaboration, and web development.</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}

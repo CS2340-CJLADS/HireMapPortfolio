@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section id="process" class="page active">
+    <div class="container">
+      <h2>Process Description</h2>
+      <p class="lead">We followed Scrum and documented design principles, patterns, and decisions. Here is a description on how we used these for each of our sprints.</p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Scrum</h3>
+          <ul>
+            <li>Two-week sprints with sprint goals</li>
+            <li>Daily stand-ups (15 minutes)</li>
+            <li>Backlog refinement &amp; sprint planning</li>
+            <li>Reviews &amp; retrospectives</li>
+            <li>Roles: Scrum Master, Product Owner, Devs</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Design Decisions</h3>
+          <ul>
+            <li>Django Framework</li>
+            <li>Django Templates for UI</li>
+            <li>Modular, scalable components</li>
+            <li>Accessibility (contrast, keyboard nav)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- General overview: Analysis / Design / Principles / Refinement -->
+      <div class="card" style="margin-top:18px;">
+        <h3>General Overview</h3>
+        <p class="lead">A concise summary of how we approached building the project across analysis, design, implementation principles, and continuous refinement.</p>
+
+        <ol style="padding-left:18px; margin-top:8px;">
+          <li>
+            <h4 style="margin:6px 0 4px;">1. Analysis: Defining "What" We Built</h4>
+            <p>The foundation of our project began with Requirements Engineering. We translated the project's goals into a clear, actionable backlog using the Agile way. This involved:</p>
+            <ul>
+              <li><strong>User Stories:</strong> Defining all features in the "As a [Role], I want [Feature], So that [Benefit]" format. This ensured every feature was tied to a specific user goal.</li>
+              <li><strong>System Sequence Diagrams (SSDs):</strong> We created flow charts to map the interactions between our users (the Actors) and the system. This black-box view allowed us to understand the flow of events before designing the internal logic.</li>
+            </ul>
+          </li>
+          <li>
+            <h4 style="margin:6px 0 4px;">2. Design: Planning "How" We Built It</h4>
+            <p>With a clear analysis, we moved to Object-Oriented Design (OOD), opening the black box to plan our application's structure.</p>
+            <ul>
+              <li><strong>Software Architecture:</strong> We chose the Django framework, which follows a Model-View-Template pattern and provides a clean layered architecture separating data (Model), business logic (View), and presentation (Template).</li>
+              <li><strong>Design Diagrams:</strong> We created a Design Class Diagram (DCD) to get a unified idea of how the pages will function and used Sequence Diagram concepts to model object collaborations for each user story.</li>
+            </ul>
+          </li>
+          <li>
+            <h4 style="margin:6px 0 4px;">3. Principles: Building It "Well"</h4>
+            <p>We emphasized maintainability by applying fundamental OOD design principles such as SOLID and GRASP.</p>
+            <p>We learned the importance of high cohesion and low coupling: our initial per-user-story division produced tight coupling and blockers. Creating a shared Design Class Diagram enforced single responsibility and the Information Expert pattern, enabling decoupled, parallel development.</p>
+          </li>
+          <li>
+            <h4 style="margin:6px 0 4px;">4. Refinement: Improving Our Process</h4>
+            <p>We applied refactoring not only to code (fixing code smells) but also to our team's workflows.</p>
+            <ul>
+              <li><strong>Process Refactoring:</strong> We migrated from a scattered Trello setup to a more streamlined GitHub Projects workflow.</li>
+              <li><strong>Workflow Refactoring:</strong> We redesigned our GitHub branching and merging strategy to avoid merge conflicts and improve developer velocity.</li>
+            </ul>
+            <p>This iterative application of analysis, design, and refinement allowed us to build a more complex application and a more effective team.</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="tabs" style="margin-top:16px">
+        <button class="tab-button active" onclick="openSprint(event, 'sprint1')">Sprint 1</button>
+        <button class="tab-button" onclick="openSprint(event, 'sprint2')">Sprint 2</button>
+        <button class="tab-button" onclick="openSprint(event, 'sprint3')">Sprint 3</button>
+      </div>
+
+      <div id="sprint1" class="card tab-content" style="display:block;">
+        <h3>Sprint 1</h3>
+        <h4>Sprint 1 Analysis: Process &amp; Tools</h4>
+        <p>As our team's first sprint, our initial focus was on establishing our Scrum process and tools. While we successfully set up our core platforms, our retrospective revealed significant flaws in our execution and group habits.</p>
+
+        <h5>What Worked</h5>
+        <ul>
+          <li><strong>Communication:</strong> We established a strong communication system in Microsoft Teams by creating a new, dedicated thread each week. This prevented disconnected posts, made it easy to track weekly activity, and ensured all shared files were easily searchable.</li>
+          <li><strong>Backlog Management:</strong> Our Trello board was well-organized and effective for showcasing tasks and ownership.</li>
+        </ul>
+
+        <h5>What Didn't Work</h5>
+        <ul>
+          <li><strong>Poor Source Control:</strong> Our GitHub usage produced many disconnected branches and frequent merge conflicts; this culminated in a demo issue where the wrong branch was used on a presentation laptop.</li>
+          <li><strong>Weak Meeting Cadence:</strong> While Teams was effective, we failed to hold one full-team meeting outside class and attendance at Monday TA meetings was inconsistent.</li>
+        </ul>
+
+        <h5>The Core Challenge: A Flawed "Per-User Story" Strategy</h5>
+        <p>Our initial approach — assigning each teammate a full user story end-to-end — introduced several structural problems:</p>
+        <ul>
+          <li><strong>Dependency Blockers:</strong> Not everyone was full-stack; front-end and back-end work created blocking dependencies.</li>
+          <li><strong>Rift in Understanding:</strong> Parallel changes without shared design led to mismatches between front-end expectations and back-end implementations.</li>
+          <li><strong>Overlapping Work:</strong> Multiple stories depended on shared subsystems (e.g., account creation), which compounded delays.</li>
+        </ul>
+
+        <h5>TA Feedback</h5>
+        <p>Our TA, Mr. Zheng, praised our user flow but highlighted missing UI basics: a logout button and a navbar for easier navigation (the lack of which forced reliance on the browser back button).</p>
+
+        <h4>Impact of Missing Architectural Diagrams</h4>
+        <p>One critical issue was the absence of architectural or flow diagrams: without a visual shared model, the team held divergent mental models of the system, which made it difficult to coordinate implementation across layers.</p>
+
+        <p>The following two diagrams were created after the sprint review to communicate a shared understanding and to drive Sprint 2 planning:</p>
+        <div class="image-row">
+          <img class="thumb clickable" src="{% static 'sprint1_diagram.png' %}" alt="Sprint 1 Diagram - Initial Flow" data-full="{% static 'sprint1_diagram.png' %}">
+        </div>
+        <p style="margin-top:12px;">Diagram 1 (above) was an early attempt at a User Experience Interaction Flow: it aimed to give everyone a simple, page-level view of the site—showing key pages, how they connected, and a brief technical note about what each page requires. Although this provided a basic shared picture, the diagram did not go far enough to resolve the misunderstandings we were experiencing and ultimately fell short of preventing integration issues.</p>
+
+        <div class="image-row">
+          <img class="thumb clickable" src="{% static 'sprint1_diagram_2.png' %}" alt="Sprint 1 Diagram - Expanded Flow" data-full="{% static 'sprint1_diagram_2.png' %}">
+        </div>
+        <p style="margin-top:12px;">Diagram 2 (above) was a quicker, hand-drawn iteration that dug deeper into informational flows and component interactions. This informal version improved everyone’s understanding more than the first, but it arrived late—after much of the sprint's work was already underway—so it forced additional rework to align implementations with the clarified design.</p>
+
+        <h4>Our Action Plan: A New Strategy for Sprint 2</h4>
+        <ul>
+          <li><strong>New Development Strategy:</strong> Abandon per-user-story work division; create a comprehensive list of requirements and visual artifacts, then break work up on a page-by-page basis.</li>
+          <li><strong>Improved Scrum Process:</strong> Mandate at least one 30-minute full-team meeting weekly outside class and enforce Monday TA meeting attendance.</li>
+          <li><strong>New GitHub Workflow:</strong> Introduce a clear branch strategy using Sprint-#-Main branches to streamline merging.</li>
+          <li><strong>Role Changes:</strong> Move Ali Vafaeian to Scrum Master and to fullstack (along with James Armendariz) to address front/back imbalances.</li>
+        </ul>
+
+        <p>These diagrams and the action plan were used to re-align priorities for Sprint 2 and to remove the ambiguity that had slowed Sprint 1.</p>
+       </div>
+
+      <div id="sprint2" class="card tab-content" style="display:none;">
+        <h3>Sprint 2</h3>
+        <h4>Sprint 2: A Successful Pivot to OOD</h4>
+        <p>Our second sprint was defined by a complete pivot in strategy, directly addressing the failures of Sprint 1. We moved from a chaotic, code-first approach to a structured Object-Oriented Design (OOD) process grounded in formal diagrams and software-design principles.</p>
+
+        <h5>What Worked: The Power of Design-First</h5>
+        <p>The biggest win in this sprint was prioritizing Object-Oriented Analysis and Design before implementation. This design-first stance eliminated many previous blockers and clarified responsibilities.</p>
+        <ul>
+          <li><strong>Formal Diagramming:</strong> We created two key artifacts that guided implementation:
+            <ul>
+              <li><strong>System Flow Chart (SSD):</strong> A black-box view defining the interactions between actors and the system, used to scope interfaces and user flows.</li>
+              <li><strong>Design Class Diagram (DCD):</strong> A backend-focused class model and rough method list that gave the team a shared architecture and allowed backend work to proceed independently.</li>
+            </ul>
+          </li>
+          <li><strong>Applying OOD Principles:</strong> With a DCD we enforced Low Coupling and the Information Expert principle; backend developers could implement features against well-defined contracts, removing dependency blockers.</li>
+          <li><strong>Process Refactoring:</strong> We continued refining our sprint process and reduced team-level process smells through clearer planning and documentation.</li>
+          <li><strong>Source Control:</strong> We implemented a clearer GitHub branching and merging workflow (Sprint-#-Main pattern), which immediately reduced merge conflicts.</li>
+          <li><strong>Tooling:</strong> We migrated from Trello to GitHub Projects and made tasks into GitHub Issues, streamlining work and tying tasks directly to the repository.</li>
+        </ul>
+
+        <h5>What Didn't Work: External Time Management</h5>
+        <p>While the OOD approach was successful, our progress was hampered by an external time conflict: the Exam 2 alternative assignment. Mid-sprint priorities shifted, freezing active development. This highlighted the need to plan around academic deadlines.</p>
+
+        <h5>Our Action Plan: Further Refinement</h5>
+        <ul>
+          <li><strong>Earlier Planning:</strong> Complete planning and diagramming earlier in the sprint cycle to avoid late-stage surprises.</li>
+          <li><strong>Intensive Work Sessions:</strong> Hold at least one extended meeting outside class to establish major requirements and make concentrated progress together.</li>
+        </ul>
+
+        <h5>Diagrams &amp; Artifacts</h5>
+
+        <div class="image-row">
+          <img class="thumb clickable" src="{% static 'sprint2_diagram.png' %}" alt="Sprint 2 Diagram" data-full="{% static 'sprint2_diagram.png' %}">
+        </div>
+        <p style="margin-top:12px;">Though not a formal diagram, we decided to list out every app and their required methods to not leave front and back end developers guessing. The related apps are accounts, recruiter, seeker, and messages, which handle the bulk of the functionality of our website. Functionally this diagram serves some of the same purposes as a DCD in that it gives everyone a clear naming scheme, and although interactions are described, we left displaying interactions to a different diagram.</p>
+
+        <div class="image-row">
+          <img class="thumb clickable" src="{% static 'sprint2_diagram_2.png' %}" alt="Sprint 2 Diagram 2" data-full="{% static 'sprint2_diagram_2.png' %}">
+        </div>
+        <p style="margin-top:12px;">The first of our diagrams, our model class diagram. This was created at the start of our project to describe the different models in our system and which ones are related to each other. Though we made a few errors with this diagram, such as inconsistent arrow directions and missing or incorrect information, it gave us a solid ground to develop the required parts of our first sprint, as well as dive deeper into what was missing and create new diagrams for our other two sprints.</p>
+
+      <div id="sprint3" class="card tab-content" style="display:none;">
+        <h3>Sprint 3</h3>
+        <p>Details about Sprint 3...</p>
+      </div>
+    </div>
+  </section>
+
+<div id="imageModal" class="modal" aria-hidden="true" role="dialog" aria-label="Full image">
+  <button class="close" aria-label="Close image">&times;</button>
+  <img class="modal-content" id="modalImage" alt="Full size image">
+  <div id="caption" role="note"></div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  function openSprint(evt, sprintName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(sprintName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  window.openSprint = openSprint; // expose to global for inline onclicks
+
+  // Modal script
+  var modal = document.getElementById("imageModal");
+  var modalImg = document.getElementById("modalImage");
+  var captionText = document.getElementById("caption");
+  var images = document.querySelectorAll('.thumb.clickable');
+
+  images.forEach(function(image){
+    image.addEventListener('click', function(){
+      modal.style.display = "block";
+      modal.setAttribute('aria-hidden', 'false');
+      modalImg.src = image.getAttribute('data-full') || image.src;
+      modalImg.alt = image.alt || '';
+      captionText.textContent = image.alt || '';
+      // prevent background scrolling
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  var closeBtn = document.querySelector('.modal .close');
+  closeBtn.addEventListener('click', function(){
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  });
+
+  // close on esc
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      if(modal.style.display === 'block'){
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+    }
+  });
+
+  // click outside image to close
+  modal.addEventListener('click', function(event){
+    if(event.target === modal){
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  });
+});
+</script>
+
+{% endblock %}

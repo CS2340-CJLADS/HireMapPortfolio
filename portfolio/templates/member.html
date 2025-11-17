@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="member" class="page active">
+    <div class="container" id="memberContainer">
+        <div class="member-head">
+            <img class="avatar-lg" src="{{ member.avatar }}" alt="{{ member.name }}">
+            <div>
+                <h2 style="margin:0">{{ member.name }}</h2>
+                <p class="role" style="margin:4px 0 8px">Role: {{ member.role }}</p>
+                <p>{{ member.contrib }}</p>
+                <div class="chips">
+                    {% for skill in member.skills %}
+                        <span class="tag">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+                <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap">
+                    {% for link in member.links %}
+                        <a class="btn secondary" href="{{ link.href }}" target="_blank" rel="noopener">{{ link.label }}</a>
+                    {% endfor %}
+                    <a class="btn" href="{% url 'team' %}">Back to Team</a>
+                </div>
+            </div>
+        </div>
+        <div class="grid-3" style="margin-top:16px">
+            {% for work_item in member.work %}
+                <div class="card">
+                    <h3 style="margin:10px 0 6px">{{ work_item.title }}</h3>
+                    <p style="margin:0">{{ work_item.desc }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="video" class="page active">
+    <div class="container">
+      <h2>Video Demonstration</h2>
+      <p class="lead">A quick walkthrough of the key features and flows.</p>
+      <div class="video-wrap">
+        <!-- TODO: Replace VIDEO_ID with your uploaded demo video -->
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen title="Demo Video"></iframe>
+      </div>
+    </div>
+  </section>
+  <div class="card" style="margin-top:16px">
+        <h3>User Stories</h3>
+        <ol class="user-story-list">
+          <li>
+            <span class="role">Job Seeker</span>
+            <span class="goal">Create a profile with my headline, skills, education, work experience, and links so recruiters can learn about me.</span>
+          </li>
+          <li>
+            <span class="role">Job Seeker</span>
+            <span class="goal">Search for jobs with filters (title, skills, location, salary range, remote/on-site, visa sponsorship) so I can find opportunities that match my needs.</span>
+          </li>
+          <li>
+            <span class="role">Job Seeker</span>
+            <span class="goal">Apply to a job with one click and include a tailored note so my application feels personalized.</span>
+          </li>
+          <li>
+            <span class="role">Job Seeker</span>
+            <span class="goal">Track the status of my applications (Applied → Review → Interview → Offer → Closed) so I know where I stand.</span>
+          </li>
+          <li>
+            <span class="role">Job Seeker</span>
+            <span class="goal">Set privacy options on my profile so I control what recruiters can see.</span>
+          </li>
+          <li>
+            <span class="role">Job Seeker</span>
+            <span class="goal">Receive recommendations for jobs based on my skills so I discover opportunities I might have missed.</span>
+          </li>
+          <li>
+            <span class="role">Job Seeker</span>
+            <span class="goal">View job postings on an interactive map so I can see which ones are near me.</span>
+          </li>
+          <li>
+            <span class="role">Job Seeker</span>
+            <span class="goal">Filter jobs on the map by distance from my current location so I can prioritize nearby opportunities.</span>
+          </li>
+          <li>
+            <span class="role">Job Seeker</span>
+            <span class="goal">Set a preferred commute radius (e.g., 10 miles) on the map so I only see jobs within a reasonable travel distance.</span>
+          </li>
+          <li>
+            <span class="role">Recruiter</span>
+            <span class="goal">Post and edit job roles so candidates can apply to my openings.</span>
+          </li>
+          <li>
+            <span class="role">Recruiter</span>
+            <span class="goal">Search for candidates by skills, location, and projects so I can find talent that fits my positions.</span>
+          </li>
+          <li>
+            <span class="role">Recruiter</span>
+            <span class="goal">Organize applicants in a pipeline (e.g., a Kanban board) so I can easily manage hiring stages.</span>
+          </li>
+          <li>
+            <span class="role">Recruiter</span>
+            <span class="goal">Add internal notes to candidate profiles so I can record evaluation details.</span>
+          </li>
+          <li>
+            <span class="role">Recruiter</span>
+            <span class="goal">Schedule interview slots for candidates so the hiring process is organized.</span>
+          </li>
+          <li>
+            <span class="role">Recruiter</span>
+            <span class="goal">Save a candidate search and get notified about new matches so I don't have to repeat the same queries.</span>
+          </li>
+          <li>
+            <span class="role">Recruiter</span>
+            <span class="goal">Receive candidate recommendations for my job postings so I find qualified applicants faster.</span>
+          </li>
+          <li>
+            <span class="role">Recruiter</span>
+            <span class="goal">Pin my job posting's office location on a map so candidates know exactly where the job is based.</span>
+          </li>
+          <li>
+            <span class="role">Recruiter</span>
+            <span class="goal">See clusters of applicants by location on a map so I understand where most candidates are coming from.</span>
+          </li>
+          <li>
+            <span class="role">Administrator</span>
+            <span class="goal">Manage users and roles so the platform remains fair and safe.</span>
+          </li>
+          <li>
+            <span class="role">Administrator</span>
+            <span class="goal">Moderate or remove job posts so the platform stays free of spam or abuse.</span>
+          </li>
+          <li>
+            <span class="role">Administrator</span>
+            <span class="goal">Export data (CSV) for reporting purposes so stakeholders can analyze usage.</span>
+          </li>
+        </ol>
+      </div>
+      <style>
+    .user-story-list {
+      list-style: none;
+      padding-left: 0;
+      counter-reset: story-counter;
+    }
+    .user-story-list li {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease;
+      position: relative;
+      padding-left: 3em;
+    }
+    .user-story-list li::before {
+      content: counter(story-counter) ".";
+      counter-increment: story-counter;
+      position: absolute;
+      left: 1em;
+      top: 16px;
+      font-weight: bold;
+      color: #0056b3;
+      width: 2em;
+    }
+    .user-story-list li:hover {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .user-story-list .role {
+      font-weight: bold;
+      color: #0056b3;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .user-story-list .goal {
+      color: #333;
+    }
+</style>
+{% endblock %}

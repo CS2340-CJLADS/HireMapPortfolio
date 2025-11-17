@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="team" class="page active">
+    <div class="container">
+      <h2>Team Presentation</h2>
+      <p class="lead">Each member’s name, role, and contributions. Click a card to open their full profile page.</p>
+      <div id="teamGrid" class="grid-3" style="margin-top:14px">
+        {% for member in team %}
+            <a class="card team-card" href="{% url 'member' member.id %}">
+                <img class="avatar" src="{{ member.avatar }}" alt="{{ member.name }}">
+                <h3 style="margin:10px 0 4px">{{ member.name }}</h3>
+                <div class="role">Role: {{ member.role }}</div>
+                <p style="margin:0">{{ member.contrib }}</p>
+            </a>
+        {% endfor %}
+      </div>
+    </div>
+</section>
+{% endblock %}
