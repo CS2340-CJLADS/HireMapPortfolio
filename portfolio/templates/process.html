@@ -166,10 +166,31 @@
           <img class="thumb clickable" src="{% static 'sprint2_diagram_2.png' %}" alt="Sprint 2 Diagram 2" data-full="{% static 'sprint2_diagram_2.png' %}">
         </div>
         <p style="margin-top:12px;">The first of our diagrams, our model class diagram. This was created at the start of our project to describe the different models in our system and which ones are related to each other. Though we made a few errors with this diagram, such as inconsistent arrow directions and missing or incorrect information, it gave us a solid ground to develop the required parts of our first sprint, as well as dive deeper into what was missing and create new diagrams for our other two sprints.</p>
+      </div>
 
       <div id="sprint3" class="card tab-content" style="display:none;">
-        <h3>Sprint 3</h3>
-        <p>Details about Sprint 3...</p>
+        <h3>Sprint 3: Mastery and Refinement</h3>
+        <p>Our final sprint was the most successful, representing the culmination of all the lessons learned from our previous retrospectives. The team was now highly familiar with our codebase, our MVC Software Architecture, and our internal function names. This sprint demonstrated the power of our refined OOD process.</p>
+
+        <h5>What Worked: The Payoff of Good Design</h5>
+        <p>This sprint was a direct contrast to our first. Our process was efficient, our goals were clear, and our design was robust.</p>
+        <ul>
+          <li><strong>Cohesive, Focused Development:</strong> This sprint had fewer User Stories, with all of them dedicated to the map system. This was a strategic decision to dedicate an entire sprint to the project's core feature. This focus allowed us to achieve High Cohesion, as all the work was strongly related and built upon a single, well-defined part of the system.</li>
+          <li><strong>A Living Architectural Blueprint:</strong> By Sprint 3, our Design Class Diagram (DCD) was extensive and mature. Unlike in Sprint 1, where we had no diagrams, our process was now simply adding on to the existing diagram. This is a key benefit of the Open/Closed Principle; our core design was closed for modification, allowing us to extend it with new map features without breaking existing functionality.</li>
+          <li><strong>Time for True Refactoring:</strong> Because our new process was so efficient, we had time to go back and address Code Smells and bugs from earlier sprints. We applied Refactoring techniques to make our code more efficient and effective, improving its internal quality without changing its external behavior. This is the design payoff that a good OOD process enables.</li>
+        </ul>
+
+        <h5>What Didn't Work: A Shift to Implementation Challenges</h5>
+        <p>In a significant sign of progress, our team did not suffer from the process smells or High Coupling issues that plagued Sprint 1. Our GitHub workflow, meeting cadence, and development strategy were all effective.</p>
+        <p>The primary challenges in this sprint were no longer procedural or design-based. Instead, they were implementation-level technical challenges, such as integrating the map APIs and optimizing data transfer. This is a sign of a healthy, mature project where the team can focus on solving complex technical problems rather than fighting a flawed strategy or rift in understanding.</p>
+
+        <div class="image-row">
+          <img class="thumb clickable" src="{% static 'sprint3_diagram.png' %}" alt="Sprint 3 User Flow Diagram" data-full="{% static 'sprint3_diagram.png' %}">
+        </div>
+        <p style="margin-top:12px;">Our user flow diagram took inspiration from in class diagrams such as design class and user story, but fitted to what we needed during sprint 2. Sticking to UML, the goal was to clearly show how a user accesses the website starting from account creation and signing in. It also includes information that needs to be displayed or taken in, or associated functionality. This resolved a lot of team conflict about which pages would lead to where, if back end missed some important information to bring to the front end, if front end forgot to includea button or link to another page, and etc.</p>
+
+        <h5>Sprint 3 Summary: Proving the Process</h5>
+        <p>Sprint 3 was the "payoff" sprint. It proved that by learning from our Sprint 1 failures and formally adopting the OOA/OOD principles in Sprint 2, we had created an efficient and scalable development process. We successfully delivered the project's most complex feature, optimized our existing code through Refactoring, and validated the power of a design-first, diagram-driven workflow.</p>
       </div>
     </div>
   </section>

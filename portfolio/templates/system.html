@@ -3,6 +3,10 @@
 {% block content %}
 <section id="system" class="page active">
     <div class="container">
+        <h2>Project Overview</h2>
+        <p>HireMap was a comprehensive group project for CS 2340, designed to address a key inefficiency in the job-seeking market: location. While many platforms allow location-based searches, they rarely provide the visual and logistical tools to truly understand commute, talent distribution, and geographic opportunity.</p>
+        <p>HireMap is a full-stack web application built to serve three distinct user roles: Job Seekers, Recruiters, and Administrators. The primary design philosophy was to create a cohesive ecosystem where data entered by one user (like a recruiter) directly and efficiently enhances the experience for another (like a job seeker).</p>
+
         <h2>Core Features & Implementation Reflecting User Stories</h2>
         <p class="lead">The platform's architecture was divided by user role to ensure a focused, clutter-free experience for each.</p>
 
@@ -17,8 +21,14 @@
                         <li><strong>Map View:</strong> The platform's signature feature. We used an interactive map library (like Leaflet.js) to plot all job postings geographically (US #7).</li>
                     </ul>
                 </li>
-                <li><strong>Key Implementation: The Client-Side Radius Filter:</strong> To make the map truly useful, we implemented a client-side radius filter (US #8, #9). A job seeker can set their home address and use a simple slider to define a commute radius (e.g., "within 15 miles"). This filtering happens instantly in the browser without a page reload, providing immediate visual feedback. This efficiency was a core goal, as it transforms the map from a static display into a dynamic decision-making tool.</li>
-                <li><strong>Smart Tools & Tracking:</strong> The system algorithmically suggests jobs based on profile skills (US #6) and provides a dedicated Kanban board to track application statuses (US #4), moving beyond a simple "apply" button (US #3).</li>
+                <li><strong>Key Implementation: The Client-Side Radius Filter:</strong> To make the map truly useful, we implemented a client-side radius filter (US #8, #9). A job seeker can set their home address and use a simple slider to define a commute radius (e.g., within 15 miles). This filtering happens instantly in the browser without a page reload, providing immediate visual feedback and transforming the map from a static display into a dynamic decision-making tool.</li>
+                <li><strong>Smart Tools & Integrated Tracking:</strong> The system moves beyond a simple apply button to create a full feedback loop.
+                    <ul>
+                        <li><strong>Personalized Applications (US #3):</strong> A One-Click Apply feature that uses the seeker's profile but also provides a modal popup allowing them to attach a brief, personalized note to the recruiter.</li>
+                        <li><strong>Algorithmic Recommendations (US #6):</strong> A dedicated Recommended for You section on their dashboard, driven by skills listed in their profile.</li>
+                        <li><strong>Visual Application Tracking (US #4):</strong> A personal Kanban board where seekers can visually track their application status (Applied, In Review, Interview, Offer, etc.) as it's updated by recruiters, closing the communication loop.</li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
@@ -26,15 +36,21 @@
             <h3>2. The Recruiter Toolkit: Efficient Sourcing and Management</h3>
             <p>For the recruiter, the system is designed to be a powerful talent-sourcing and workflow-management engine.</p>
             <ul>
-                <li><strong>Precision Job Posting:</strong> When a recruiter posts a job (US #10), they don't just type an address; they interactively pin the exact office location on a map (US #17). This single action is the source of truth that powers the entire seeker-facing map system.</li>
-                <li><strong>Proactive Candidate Sourcing:</strong> Recruiters can actively search the candidate database (US #11) or let the system work for them. We implemented:
+                <li><strong>Precision Job Posting:</strong> When a recruiter posts a job (US #10), they interactively pin the exact office location on a map (US #17). This single action is the source of truth that powers the entire seeker-facing map system.</li>
+                <li><strong>Proactive Candidate Sourcing:</strong> Recruiters can actively search the candidate database (US #11) or let the system work for them:
                     <ul>
                         <li><strong>Candidate Recommendations (US #16):</strong> A dashboard widget that proactively suggests strong-fit candidates for active jobs.</li>
                         <li><strong>Saved Search Alerts (US #15):</strong> The ability to save a complex candidate search and receive email notifications when new users match the criteria.</li>
                     </ul>
                 </li>
                 <li><strong>Key Implementation: Visualizing the Talent Pool:</strong> Recruiters get their own map-based insights. For any job post, they can view an Applicant Cluster Map (US #18). This visualizes the geographic locations of all applicants, providing an immediate, at-a-glance understanding of the talent pool's distribution.</li>
-                <li><strong>Integrated Hiring Pipeline:</strong> We built a complete applicant management system. Recruiters manage candidates in a drag-and-drop Kanban pipeline (US #12), add private team notes (US #13), and schedule interviews directly from the interface (US #14).</li>
+                <li><strong>Integrated Hiring Pipeline & Comms Hub:</strong> This is where recruiters manage the entire hiring workflow.
+                    <ul>
+                        <li><strong>Visual Workflow (US #12):</strong> A drag-and-drop Kanban pipeline to move candidates between stages (New, Screen, Interview). This directly updates the status on the seeker's personal board (US #4).</li>
+                        <li><strong>Team Collaboration (US #13):</strong> The ability to add private, internal-only notes to a candidate's profile for team evaluation, which are not visible to the applicant.</li>
+                        <li><strong>Integrated Communication:</strong> The system manages key communication touchpoints. Recruiters can schedule interviews directly from the pipeline, which sends an invitation to the candidate (US #14), and they receive the seeker's personalized application note (US #3) directly in the applicant view.</li>
+                    </ul>
+                </li>
             </ul>
         </div>
 
@@ -44,8 +60,8 @@
             <ul>
                 <li><strong>Platform Governance:</strong> Admins have full control over the system's health, including:
                     <ul>
-                        <li><strong>User Management:</strong> Assigning roles and managing user accounts (US #19).</li>
-                        <li><strong>Content Moderation:</strong> A queue for reviewing and approving job posts to maintain quality (US #20).</li>
+                        <li><strong>User Management:</strong> Assigning roles (Seeker, Recruiter, Admin) and managing user accounts (US #19).</li>
+                        <li><strong>Content Moderation:</strong> A queue for reviewing and approving job posts to maintain platform quality (US #20).</li>
                     </ul>
                 </li>
                 <li><strong>Data & Analytics:</strong> An export feature allows admins to download CSV reports for users, jobs, and applications, providing crucial data for business analysis and reporting (US #21).</li>
@@ -55,8 +71,8 @@
         <div class="card" style="margin-top:16px">
             <h3>Reflection: A Cohesive, Story-Driven System</h3>
             <p>This project was a valuable exercise in translating 21 distinct user stories into a single, cohesive application. The key to our success was data reusability.</p>
-            <p>The geospatial data was the "connective tissue" of the entire platform. A single action—a recruiter pinning a location (US #17)—was efficiently stored and reused to power four separate features: the job seeker's map (US #7), the radius filter (US #8), the seeker's distance calculation (US #9), and the recruiter's applicant cluster map (US #18).</p>
-            <p>By focusing on how data from one user story could flow to and enable another, we were able to build a complex, multi-sided system where every feature felt purposeful and integrated.</p>
+            <p>The geospatial data was the connective tissue of the entire platform. A single action a recruiter pinning a location (US #17) was efficiently stored and reused to power four separate features. But this philosophy extended everywhere: a status update on the recruiter's Kanban board (US #12) immediately populated the seeker's board (US #4).</p>
+            <p>By focusing on how data from one user story could flow to and enable another, we built a complex, multi-sided system. This data-first approach ensured that every feature from the large-scale maps to the granular details of a Kanban status, a private note, or an application message felt purposeful and seamlessly integrated.</p>
         </div>
     </div>
 </section>
