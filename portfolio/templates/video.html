@@ -1,13 +1,36 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <section id="video" class="page active">
     <div class="container">
       <h2>Video Demonstration</h2>
       <p class="lead">A quick walkthrough of the key features and flows.</p>
-      <div class="video-wrap">
-        <!-- TODO: Replace VIDEO_ID with your uploaded demo video -->
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen title="Demo Video"></iframe>
+
+      <div style="margin-top: 24px;">
+        <h3>Job Seeker View</h3>
+        <div class="video-wrap" style="margin-bottom: 32px;">
+          <video width="100%" controls>
+            <source src="{% static 'HireMapVideo1.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <h3>Recruiter View</h3>
+        <div class="video-wrap" style="margin-bottom: 32px;">
+          <video width="100%" controls>
+            <source src="{% static 'HireMapVideo2.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <h3>Admin View</h3>
+        <div class="video-wrap" style="margin-bottom: 32px;">
+          <video width="100%" controls>
+            <source src="{% static 'HireMapVideo3.mp4' %}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   </section>

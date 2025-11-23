@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 TEAM = [
-  { 'id':'arlington', 'name':'Arlington (Link) Kell', 'role':'Fullstack / Maps', 'avatar':'https://picsum.photos/seed/ali-map/800/600',
-    'contrib':'Link is a third-year computer science student at Georgia Tech with a focus on frontend development and user interface design. His interests include creating intuitive, responsive web applications and improving the overall user experience through thoughtful design. He enjoys working on projects that combine visual creativity with technical implementation and aims to continue developing his skills in modern web technologies. He\'s passionate about bridging the gap between functionality and visual design building interfaces that feel as good as they look. Outside of class, Link enjoys experimenting with motion design, working on personal web projects, and contributing to open-source design systems.',
+  { 'id':'arlington', 'name':'Arlington (Link) Kell', 'role':'Fullstack / Maps', 'avatar':'/static/LinkArlington.jpg',
+    'contrib':'Link is a third-year computer science student at Georgia Tech with a focus on frontend development and user interface design. Link enjoys experimenting with motion design, working on personal web projects, and contributing to open-source design systems.',
     'skills':['Django', 'Python', 'Git', 'GitHub'],
     'links':[
       {'label':'GitHub', 'href':'https://github.com/arlingtonmkell'},
@@ -11,7 +11,6 @@ TEAM = [
     'work':[
       {
         'title': 'Application Pipeline API',
-        'img': 'https://picsum.photos/seed/arlington-pipeline/800/600',
         'desc': 'Developed the back-end API for the application tracking pipeline, enabling both recruiters and job seekers to manage and update application states (e.g., Applied, Review, Interview) on their respective Kanban boards.'
       }
     ]
@@ -26,22 +25,18 @@ TEAM = [
     'work':[
       {
         'title': 'Administrator Functionality',
-        'img': 'https://picsum.photos/seed/focus-admin/800/600',
         'desc': 'Developed core administrator functionalities, including user role management and content moderation tools to ensure platform safety and fairness.'
       },
       {
         'title': 'Geospatial Features',
-        'img': 'https://picsum.photos/seed/focus-geo/800/600',
         'desc': 'Engineered the back-end logic for the map-based search feature, enabling efficient geospatial querying of job postings and candidate locations.'
       },
       {
         'title': 'Communication Systems',
-        'img': 'https://picsum.photos/seed/focus-comm/800/600',
         'desc': 'Built the back-end for the real-time, in-platform messaging system, allowing direct communication between recruiters and job seekers.'
       },
       {
         'title': 'Notification Services',
-        'img': 'https://picsum.photos/seed/focus-notif/800/600',
         'desc': 'Integrated an email service to handle automated platform notifications and enable recruiter outreach to candidates via their personal email.'
       }
     ]
@@ -56,17 +51,14 @@ TEAM = [
     'work':[
       {
         'title': 'Quality Assurance & Debugging',
-        'img': 'https://picsum.photos/seed/david-qa/800/600',
         'desc': 'Managed back-end quality assurance, proactively identifying and resolving critical bugs across the application to ensure stability and performance.'
       },
       {
         'title': 'Recommendation Engine (Jobs)',
-        'img': 'https://picsum.photos/seed/david-jobs/800/600',
         'desc': 'Designed and implemented the recommendation algorithm for job seekers, intelligently matching user profiles and skills to relevant job opportunities.'
       },
       {
         'title': 'Recommendation Engine (Candidates)',
-        'img': 'https://picsum.photos/seed/david-candidates/800/600',
         'desc': 'Developed the candidate recommendation algorithm for recruiters, surfacing qualified talent by analyzing job posting requirements against the user database.'
       }
     ]
@@ -81,17 +73,14 @@ TEAM = [
     'work':[
       {
         'title': 'User Profile & Application API',
-        'img': 'https://picsum.photos/seed/james-profile/800/600',
         'desc': 'Developed the back-end services for creating, updating, and securing user profiles, including the core \'one-click apply\' functionality for job applications.'
       },
       {
         'title': 'Recruiter Tools API',
-        'img': 'https://picsum.photos/seed/james-recruiter/800/600',
         'desc': 'Built the back-end API endpoints for the recruiter dashboard, enabling recruiters to post, edit, and manage their job listings.'
       },
       {
         'title': 'Core Platform Integration',
-        'img': 'https://picsum.photos/seed/james-integration/800/600',
         'desc': 'Led the integration of all user-specific modules (Profile, Jobs, Applications) into a single, centralized dashboard to create a cohesive and seamless user experience.'
       }
     ]
@@ -106,12 +95,10 @@ TEAM = [
     'work':[
       {
         'title': 'Front-End Lead',
-        'img': 'https://picsum.photos/seed/sandro-lead/800/600',
         'desc': 'Spearheaded all front-end development, translating design mockups into responsive, high-fidelity UI components and guiding the team on UI/UX best practices.'
       },
       {
         'title': 'UI/UX Implementation',
-        'img': 'https://picsum.photos/seed/sandro-uiux/800/600',
         'desc': 'Designed and implemented the application\'s main landing page and established the comprehensive visual theme, color palette, and style guide used across all pages.'
       }
     ]
@@ -126,27 +113,22 @@ TEAM = [
     'work': [
       {
         'title': 'Administrator Features & Data',
-        'img': 'https://picsum.photos/seed/ali-admin/800/600',
         'desc': 'Developed the administrator-facing data export feature, allowing for CSV downloads of user and job data for reporting and analysis.'
       },
       {
         'title': 'Project & Workflow Management',
-        'img': 'https://picsum.photos/seed/ali-workflow/800/600',
         'desc': 'Managed the team\'s version control by organizing the GitHub repository and standardizing development workflows and communication channels.'
       },
       {
         'title': 'System Design',
-        'img': 'https://picsum.photos/seed/ali-design/800/600',
         'desc': 'Authored key system design diagrams (e.g., UML, data flow) to guide development, document architecture, and ensure a shared technical vision.'
       },
       {
         'title': 'UI/UX & Feature Implementation',
-        'img': 'https://picsum.photos/seed/ali-uiux/800/600',
         'desc': 'Implemented the front-end for the job seeker\'s \'Application Tracker,\' visualizing application statuses in a dynamic, drag-and-drop Kanban board.'
       },
       {
         'title': 'Core UI & Authentication',
-        'img': 'https://picsum.photos/seed/ali-auth/800/600',
         'desc': 'Led the UI/UX design for the main user dashboard and profile pages and engineered the secure user authentication and session management flow.'
       }
     ]

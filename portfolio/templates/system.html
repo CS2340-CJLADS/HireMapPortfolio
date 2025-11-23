@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <section id="system" class="page active">
@@ -6,6 +7,13 @@
         <h2>Project Overview</h2>
         <p>HireMap was a comprehensive group project for CS 2340, designed to address a key inefficiency in the job-seeking market: location. While many platforms allow location-based searches, they rarely provide the visual and logistical tools to truly understand commute, talent distribution, and geographic opportunity.</p>
         <p>HireMap is a full-stack web application built to serve three distinct user roles: Job Seekers, Recruiters, and Administrators. The primary design philosophy was to create a cohesive ecosystem where data entered by one user (like a recruiter) directly and efficiently enhances the experience for another (like a job seeker).</p>
+
+        <div class="image-grid" style="margin-top: 16px;">
+            <div class="image-container">
+                <img class="thumb clickable" src="{% static 'HomePage.png' %}" alt="HireMap Home Page" data-full="{% static 'HomePage.png' %}">
+                <p style="text-align: center; margin-top: 8px;"><strong>The HireMap Home Page: A central entry point for all user roles.</strong></p>
+            </div>
+        </div>
 
         <h2>Core Features & Implementation Reflecting User Stories</h2>
         <p class="lead">The platform's architecture was divided by user role to ensure a focused, clutter-free experience for each.</p>
@@ -30,6 +38,16 @@
                     </ul>
                 </li>
             </ul>
+            <div class="image-grid" style="margin-top: 16px;">
+                <div class="image-container">
+                    <img class="thumb clickable" src="{% static 'SeekerDashboard.png' %}" alt="Job Seeker Dashboard" data-full="{% static 'SeekerDashboard.png' %}">
+                    <p style="text-align: center; margin-top: 8px;"><strong>The Job Seeker Dashboard: A personalized hub for managing applications and recommendations.</strong></p>
+                </div>
+                <div class="image-container">
+                    <img class="thumb clickable" src="{% static 'KanBanBoard.png' %}" alt="Application Tracking Kanban Board" data-full="{% static 'KanBanBoard.png' %}">
+                    <p style="text-align: center; margin-top: 8px;"><strong>The Kanban Board: A visual tool for tracking application statuses.</strong></p>
+                </div>
+            </div>
         </div>
 
         <div class="card" style="margin-top:16px">
@@ -52,6 +70,16 @@
                     </ul>
                 </li>
             </ul>
+            <div class="image-grid" style="margin-top: 16px;">
+                <div class="image-container">
+                    <img class="thumb clickable" src="{% static 'CandidatePage.png' %}" alt="Recruiter Candidate View" data-full="{% static 'CandidatePage.png' %}">
+                    <p style="text-align: center; margin-top: 8px;"><strong>The Recruiter's Candidate View: A detailed look at a job seeker's profile.</strong></p>
+                </div>
+                <div class="image-container">
+                    <img class="thumb clickable" src="{% static 'MapPage.png' %}" alt="Map-Based Job Search" data-full="{% static 'MapPage.png' %}">
+                    <p style="text-align: center; margin-top: 8px;"><strong>The Map View: Visualizing job opportunities and applicant clusters.</strong></p>
+                </div>
+            </div>
         </div>
 
         <div class="card" style="margin-top:16px">
@@ -67,6 +95,7 @@
                 <li><strong>Data & Analytics:</strong> An export feature allows admins to download CSV reports for users, jobs, and applications, providing crucial data for business analysis and reporting (US #21).</li>
             </ul>
         </div>
+
 
         <div class="card" style="margin-top:16px">
             <h3>Reflection: A Cohesive, Story-Driven System</h3>
