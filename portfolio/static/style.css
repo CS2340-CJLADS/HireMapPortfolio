@@ -71,6 +71,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    align-items: start;
+  }
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   @media (max-width: 768px) {
     .image-grid {

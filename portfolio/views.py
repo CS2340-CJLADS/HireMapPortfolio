@@ -1,20 +1,6 @@
 from django.shortcuts import render
 
 TEAM = [
-  { 'id':'arlington', 'name':'Arlington (Link) Kell', 'role':'Fullstack / Maps', 'avatar':'/static/LinkArlington.jpg',
-    'contrib':'Link is a third-year computer science student at Georgia Tech with a focus on frontend development and user interface design. Link enjoys experimenting with motion design, working on personal web projects, and contributing to open-source design systems.',
-    'skills':['Django', 'Python', 'Git', 'GitHub'],
-    'links':[
-      {'label':'GitHub', 'href':'https://github.com/arlingtonmkell'},
-      {'label':'LinkedIn', 'href':'https://www.linkedin.com/in/arlington-kell/'}
-    ],
-    'work':[
-      {
-        'title': 'Application Pipeline API',
-        'desc': 'Developed the back-end API for the application tracking pipeline, enabling both recruiters and job seekers to manage and update application states (e.g., Applied, Review, Interview) on their respective Kanban boards.'
-      }
-    ]
-  },
   { 'id':'focus', 'name':'Chayanat (Focus) Tanjariyaporn', 'role':'Fullstack', 'avatar':'https://static.wixstatic.com/media/e3397d_862ca9a1ea3640f1933d8b824a43aa11~mv2.png',
     'contrib':'Chayanat is a second-year computer science student at Georgia Tech. Being from Thailand, he also goes by his nickname, "Focus". His interests generally lies in human-computer interactions, non-traditional computer interfaces, and extended reality technologies. He is a member of GTXR (Georgia Tech Extended Reality, not Georgia Tech Experimental Rocketry!), as well as a student advisor for First-Year Texperience, a First-Year Leadership Organization on campus.',
     'skills':['Django', 'Python', 'Git', 'GitHub'],
@@ -132,6 +118,20 @@ TEAM = [
         'desc': 'Led the UI/UX design for the main user dashboard and profile pages and engineered the secure user authentication and session management flow.'
       }
     ]
+  },
+  { 'id':'arlington', 'name':'Arlington (Link) Kell', 'role':'Fullstack', 'avatar':'/static/LinkArlington.jpg',
+    'contrib':'Link is a third-year computer science student at Georgia Tech with a focus on frontend development and user interface design. Link enjoys experimenting with motion design, working on personal web projects, and contributing to open-source design systems.',
+    'skills':['Django', 'Python', 'Git', 'GitHub'],
+    'links':[
+      {'label':'GitHub', 'href':'https://github.com/arlingtonmkell'},
+      {'label':'LinkedIn', 'href':'https://www.linkedin.com/in/arlington-kell/'}
+    ],
+    'work':[
+      {
+        'title': 'Application Pipeline API',
+        'desc': 'Developed the back-end API for the application tracking pipeline, enabling both recruiters and job seekers to manage and update application states (e.g., Applied, Review, Interview) on their respective Kanban boards.'
+      }
+    ]
   }
 ]
 
@@ -156,4 +156,3 @@ def video(request):
 
 def contact(request):
     return render(request, 'contact.html')
-
